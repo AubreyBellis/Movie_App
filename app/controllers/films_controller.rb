@@ -33,7 +33,7 @@ def update
   @film = Film.find(params[:id])
   @film.update(film_params)
 
-  redirect_to films_path(@film)
+  redirect_to film_path(@film)
 end
 
 # destroy
