@@ -1,21 +1,10 @@
+<h2>Edit Film</h2>
 
-<h1>Edit Movie</h1>
+<%= render "partials/film_form"%>
 
-<%= form_for @film do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br />
+<form action="/films/<%= @film.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
-  <%= f.label :genre %>:
-  <%= f.text_field :genre %><br />
-
-  <%= f.label :year %>:
-  <%= f.text_field :year %><br />
-
-  <%= f.label :synopsis %>:
-  <%= f.text_area :synopsis %><br />
-
-  <%= f.label :picture %>:
-  <%= f.text_field :picture %><br />
-
-  <%= f.submit %>
-<% end %>
+  <input class="delete" type="submit" value="Delete Song">
+</form>
